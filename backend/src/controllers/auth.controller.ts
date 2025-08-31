@@ -40,7 +40,11 @@ await OtpToken.create({ email, otpHash, purpose: 'signup', expiresAt, attempts: 
 console.log("OTP for signup:", otp); // For testing, remove in production
 console.log("Email:", email);
 await sendOtpEmail(email, otp);
-return res.json({ message: 'OTP sent to email' });
+return res.json({
+   message: 'OTP sent to email',
+   sucess:'true',
+   otp:otp
+   });
 };
 
 
@@ -133,7 +137,7 @@ export const me = async (req: Request, res: Response) => {
       req.cookies?.token || req.headers.authorization?.split(' ')[1];
 
     if (!token) {
-      return res.status(200).json({ user: null });
+      return res.status(404).json({ user: null, message: 'No token provided' });
     }
 
     // Verify token
