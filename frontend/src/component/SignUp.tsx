@@ -38,7 +38,7 @@ const SignUp: React.FC = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/signup/start",
+        "https://notes-app-assasement-1.onrender.com/api/auth/signup/start",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -73,7 +73,7 @@ const SignUp: React.FC = () => {
     if (enteredOtp === formData.otp) {
       // alert("OTP Verified Successfully ✅");
       const response = await fetch(
-        "http://localhost:5000/api/auth/signup/verify",
+        "https://notes-app-assasement-1.onrender.com/api/auth/signup/verify",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
