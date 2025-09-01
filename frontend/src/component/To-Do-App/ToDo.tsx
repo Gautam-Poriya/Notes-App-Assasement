@@ -33,7 +33,7 @@ export default function TodoApp() {
       if (!token) return;
 
       try {
-        const res = await fetch("http://localhost:5000/api/auth/me", {
+        const res = await fetch("https://notes-app-assasement-1.onrender.com/api/auth/me", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
