@@ -33,7 +33,7 @@ const SignIn: React.FC = () => {
       // Example: await axios.post("/api/auth/send-otp", { email });
       console.log("OTP requested for:", email);
       const response = await fetch(
-        "http://localhost:5000/api/auth/signin/start",
+        "https://notes-app-assasement-1.onrender.com/api/auth/signin/start",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -67,7 +67,7 @@ const SignIn: React.FC = () => {
     if (otp === formData.otp) {
       // alert("OTP Verified Successfully ✅");
       const response = await fetch(
-        "http://localhost:5000/api/auth/signin/verify",
+        "https://notes-app-assasement-1.onrender.com/api/auth/signin/verify",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
