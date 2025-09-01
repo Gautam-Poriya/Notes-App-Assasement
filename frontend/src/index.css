@@ -1,4 +1,30 @@
 @import "tailwindcss";
+@layer utilities {
+  /* For exactly 375 x 812 (iPhone X) */
+  @media (width: 375px) and (height: 812px) {
+    .screen-375-812 {
+      width: 343px;
+      height: 32px;
+      top: 55px;
+      left: 16px;
+      gap: 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  /* For exactly 1440 x 1024 */
+  @media (width: 1440px) and (height: 1024px) {
+    .screen-1440-1024 {
+      width: 527px;
+      height: 32px;
+      gap: 10px;
+    }
+  }
+}
+
 /* 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

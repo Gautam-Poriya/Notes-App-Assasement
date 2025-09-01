@@ -57,7 +57,7 @@ const SignUp: React.FC = () => {
         setFormData({ ...formData, otp: data.otp });
         console.log("Form Data", formData); // store OTP from backend
         setOtpVisible(true); // show OTP input
-        alert("OTP generated successfully!");
+        // alert("OTP generated successfully!");
       } else {
         setError(data.message || "Failed to generate OTP.");
       }
@@ -71,7 +71,7 @@ const SignUp: React.FC = () => {
   // Handle OTP verification
   const handleVerifyOtp = async () => {
     if (enteredOtp === formData.otp) {
-      alert("OTP Verified Successfully ✅");
+      // alert("OTP Verified Successfully ✅");
       const response = await fetch(
         "http://localhost:5000/api/auth/signup/verify",
         {
@@ -105,25 +105,25 @@ const SignUp: React.FC = () => {
   }
 
   return (
-    <div className="flex min-h-screen  ml-0 mr-0 pl-0 pr-0">
+    <div className="flex  ml-0 mr-0 pl-0 pr-0">
       {/* Div 1: Logo */}
 
-      <div className="w-[591px] flex flex-col justify-center p-[32px] mt-0 ">
-        <div className="w-[79px] h-[32px] flex items-center gap-[12px]  xs:top-[55px] xs:left-[16px] xs:gap-[10px]">
+      <div className="w-[591px] flex flex-col justify-center p-[32px] mt-0 sm:w-[375px] sm:h-[812px] ">
+        <div className="w-[79px] h-[32px] flex items-center gap-[12px] sm:w-full sm:h-[32px]  sm:top-[55px] sm:left-[16px]  ">
           <img src="/icon.png" alt="Not Found" className="w-[32px] h-[32px]" />
-          <p className="sxs:w-[35px] xs:h-[26px]">HD</p>
+          <p className=" ">HD</p>
         </div>
       
 
         {/* Div 2: Title & Description */}
-        <div className=" flex justify-center items-center mt-0 ml-[64px] mr-[64px] w[527px] h-[928px]">
+        <div className=" flex  items-center justify-between p-[32px] mt-0 ml-[64px] mr-[64px] w-[527px] h-[928px]  ">
           <div className="h-[401px] w-[399px] gap-[32px] ">
             <div className="gap-[12px] h-[83px]">
               <h2 className="text-3xl font-bold text-gray-800 text-left">
                 Signup
               </h2>
               <p className="text-gray-600 mt-2">
-                Create your account by filling in the details below.
+               Sign up to enjoy the feature of HD
               </p>
             </div>
 
@@ -252,13 +252,14 @@ const SignUp: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-[849px] h-full flex flex-col justify-center items-center  overflow-hidden rounded-2xl ">
+      <div className="w-[849px] h-full flex flex-col ml-56 justify-center items-center  overflow-hidden rounded-2xl ">
         <img
           src="/right.png"
           alt="Not Found"
-          className="w-full h-full  object-cover object-center"
+          className="w-[849px] h-[1024px]  object-cover object-center"
         />
       </div>
+     
     </div>
   );
 };

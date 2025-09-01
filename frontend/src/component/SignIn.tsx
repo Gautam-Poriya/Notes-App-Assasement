@@ -48,7 +48,7 @@ const SignIn: React.FC = () => {
         setFormData({ ...formData, otp: data.otp });
         console.log("Form Data", formData); // store OTP from backend
         // setOtpVisible(true); // show OTP input
-        alert("OTP generated successfully!");
+        // alert("OTP generated successfully!");
       } else {
         setError(data.message || "Failed to generate OTP.");
       }
@@ -65,7 +65,7 @@ const SignIn: React.FC = () => {
   // ✅ Validate OTP handler
   const handleValidateOtp = async () => {
     if (otp === formData.otp) {
-      alert("OTP Verified Successfully ✅");
+      // alert("OTP Verified Successfully ✅");
       const response = await fetch(
         "http://localhost:5000/api/auth/signin/verify",
         {
@@ -104,24 +104,24 @@ const SignIn: React.FC = () => {
 
 
   return (
-    <div className="flex min-h-screen  ml-0 mr-0 pl-0 pr-0 xs:w-[375px] xs:h-[812px]">
+    <div className="flex min-h-screen  ml-0 mr-0 pl-0 pr-0 ">
       {/* Left Div - Logo */}
-      <div className="w-[591px] flex flex-col justify-center  p-[32px] mt-0 xs:w-[375px] xs:h-[812px]">
-        <div className="w-[79px] h-[32px] flex items-center justify-center gap-[12px] sm:w-[343px] sm:h-[32px] sm:top-[55px] sm:left-[16px] sm:gap-[10px] sm:flex sm:items-center sm:justify-center sm:bg-blue-400">
+      <div className="w-[591px] flex flex-col justify-center  p-[32px] mt-0  sm:w-[375px] sm:h-[812px]">
+        <div className="w-[79px] h-[32px] flex items-center justify-center gap-[12px]  ">
           <img src="/icon.png" alt="Not Found" className="w-[32px] h-[32px]" />
           <p>HD</p>
         </div>
 
         {/* Right Div - Sign In */}
-        <div className=" flex justify-center items-center mt-0 ml-[64px] mr-[64px] w[527px] h-[928px] ">
+        <div className=" flex justify-center items-center  p-[32px]  mr-[64px] w-[527px] h-[928px] ">
           <div className="h-[401px] w-[399px] gap-[32px]">
             {/* Header Section */}
             <div className="gap-[12px] h-[83px]">
-              <h2 className="text-3xl font-bold text-gray-800 text-left">
-                Sign In
-              </h2>
+              <h1 className="text-4xl font-bold  text-gray-800 text-left">
+                Sign in
+              </h1>
               <p className="text-gray-600 mt-2">
-                Enter your email and OTP to access your account.
+                Please login to continue to your account.
               </p>
             </div>
 
@@ -213,7 +213,7 @@ const SignIn: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="w-[849px] flex flex-col justify-center items-center bg-slate-700 overflow-hidden rounded-2xl border">
+      <div className="w-[849px] flex flex-col ml-56 justify-center items-center bg-slate-700 overflow-hidden rounded-2xl border">
         <img
           src="/rightImage.jpg"
           alt="Not Found"
